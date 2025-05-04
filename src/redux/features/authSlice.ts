@@ -1,6 +1,7 @@
 // src/features/auth/authSlice.ts
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import Cookie from "js-cookie";
+import { RootState } from "../store";
 
 interface User {
   user: string;
@@ -34,8 +35,8 @@ const authSlice = createSlice({
   },
 });
 
-export const selectCurrentUser = (state: any): any => state.auth.user;
-export const selectIsAuthenticated = (state: any): any =>
+export const selectCurrentUser = (state: RootState) => state.auth.user;
+export const selectIsAuthenticated = (state: RootState) =>
   state.auth.isAuthenticated;
 
 export const { logout, login } = authSlice.actions;
