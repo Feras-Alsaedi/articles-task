@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background-color: #1da1f2;
+  color: white;
+}
+
+@layer utilities {
+  .max-container {
+    @apply mx-auto max-w-[1440px];
+  }
+  .regular-14 {
+    @apply text-[14px] font-[400];
+  }
+}
+
+body {
+  font-family: Inter;
+  background-color: #f1f1f1;
+}
+
+[data-theme="dark"] body {
+  background-color: #222f3efc;
+  color: #f1f1f1;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 7px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-track:hover {
+  background: #8883;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #8885;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
