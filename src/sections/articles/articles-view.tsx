@@ -14,6 +14,7 @@ const ArticlesView = () => {
 
   const [search, setSearch] = useState("");
   const debouncedSearch = useDebounce(search, 500);
+
   const {
     data,
     isFetching: isLoading,
